@@ -45,4 +45,10 @@ public class AccountService {
                 .email(account.getEmail())
                 .build()).collect(toList());
     }
+
+    public AccountResponseDto delete(Long id) {
+        final var accountResponseDto = findById(id);
+        accountRepository.deleteById(id);
+        return accountResponseDto;
+    }
 }

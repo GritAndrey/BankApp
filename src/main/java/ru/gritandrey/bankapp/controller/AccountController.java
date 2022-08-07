@@ -1,6 +1,7 @@
 package ru.gritandrey.bankapp.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ru.gritandrey.bankapp.controller.dto.AccountRequestDto;
@@ -11,22 +12,30 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/accounts", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AccountController {
 
     private final AccountService accountService;
 
-    @PostMapping(value = "/accounts", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public Long createAccount(@RequestBody AccountRequestDto accountRequestDto) {
         return accountService.createAccount(accountRequestDto);
     }
-    @GetMapping("/accounts")
-    public List<AccountResponseDto> getAll(){
+
+    @GetMapping()
+    public List<AccountResponseDto> getAll() {
         return accountService.getAll();
     }
 
-    @GetMapping(value = "/accounts/{id}")
+    @GetMapping(value = "{id}")
     public AccountResponseDto getAccount(@PathVariable Long id) {
         return accountService.findById(id);
     }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public AccountResponseDto deleteAccount(@PathVariable Long id) {
+        return accountService.delete(id);
+    }
+
 }
