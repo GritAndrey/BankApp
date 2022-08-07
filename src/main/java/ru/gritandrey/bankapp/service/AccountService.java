@@ -8,6 +8,10 @@ import ru.gritandrey.bankapp.entity.Account;
 import ru.gritandrey.bankapp.exception.AccountNotFoundException;
 import ru.gritandrey.bankapp.repository.AccountRepository;
 
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
+
 @Service
 @RequiredArgsConstructor
 public class AccountService {
@@ -30,6 +34,15 @@ public class AccountService {
                         .name(account.getName())
                         .email(account.getEmail())
                         .build())
-                .orElseThrow(()->new AccountNotFoundException("Account not found with id: " + id));
+                .orElseThrow(() -> new AccountNotFoundException("Account not found with id: " + id));
+    }
+
+    public List<AccountResponseDto> getAll() {
+        return accountRepository.findAll().stream().map(account -> AccountResponseDto.builder()
+                .accountId(account.getId())
+                .bill(account.getBill())
+                .name(account.getName())
+                .email(account.getEmail())
+                .build()).collect(toList());
     }
 }

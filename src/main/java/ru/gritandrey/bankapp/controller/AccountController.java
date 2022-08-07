@@ -7,6 +7,8 @@ import ru.gritandrey.bankapp.controller.dto.AccountRequestDto;
 import ru.gritandrey.bankapp.controller.dto.AccountResponseDto;
 import ru.gritandrey.bankapp.service.AccountService;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -17,6 +19,10 @@ public class AccountController {
     @PostMapping(value = "/accounts", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Long createAccount(@RequestBody AccountRequestDto accountRequestDto) {
         return accountService.createAccount(accountRequestDto);
+    }
+    @GetMapping("/accounts")
+    public List<AccountResponseDto> getAll(){
+        return accountService.getAll();
     }
 
     @GetMapping(value = "/accounts/{id}")
