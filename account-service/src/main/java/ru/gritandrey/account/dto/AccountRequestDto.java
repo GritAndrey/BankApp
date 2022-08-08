@@ -1,4 +1,4 @@
-package ru.gritandrey.dto;
+package ru.gritandrey.account.dto;
 
 import lombok.Builder;
 import lombok.Value;

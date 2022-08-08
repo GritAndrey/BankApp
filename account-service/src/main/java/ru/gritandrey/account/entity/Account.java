@@ -1,4 +1,4 @@
-package ru.gritandrey.entity;
+package ru.gritandrey.account.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;

@@ -1,4 +1,4 @@
-package ru.gritandrey.exception;
+package ru.gritandrey.account.exception;
 
 public class AccountNotFoundException extends RuntimeException {
 

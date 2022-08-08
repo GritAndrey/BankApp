@@ -1,7 +1,7 @@
-package ru.gritandrey.mapper;
+package ru.gritandrey.account.mapper;
 
-import ru.gritandrey.dto.AccountResponseDto;
-import ru.gritandrey.entity.Account;
+import ru.gritandrey.account.dto.AccountResponseDto;
+import ru.gritandrey.account.entity.Account;
 
 public class AccountReadMapper implements Mapper<Account, AccountResponseDto> {
     @Override

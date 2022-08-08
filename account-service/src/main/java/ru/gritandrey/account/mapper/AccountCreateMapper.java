@@ -1,7 +1,7 @@
-package ru.gritandrey.mapper;
+package ru.gritandrey.account.mapper;
 
-import ru.gritandrey.dto.AccountCreateDto;
-import ru.gritandrey.entity.Account;
+import ru.gritandrey.account.dto.AccountCreateDto;
+import ru.gritandrey.account.entity.Account;
 
 import java.time.LocalDate;
 

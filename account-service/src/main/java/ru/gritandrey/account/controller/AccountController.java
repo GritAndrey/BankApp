@@ -1,11 +1,11 @@
-package ru.gritandrey.controller;
+package ru.gritandrey.account.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import ru.gritandrey.dto.AccountCreateDto;
-import ru.gritandrey.dto.AccountResponseDto;
-import ru.gritandrey.service.AccountService;
+import ru.gritandrey.account.dto.AccountCreateDto;
+import ru.gritandrey.account.dto.AccountResponseDto;
+import ru.gritandrey.account.service.AccountService;
 
 @RestController
 @RequiredArgsConstructor

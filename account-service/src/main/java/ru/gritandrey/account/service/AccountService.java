@@ -1,15 +1,15 @@
-package ru.gritandrey.service;
+package ru.gritandrey.account.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.gritandrey.dto.AccountCreateDto;
-import ru.gritandrey.dto.AccountResponseDto;
-import ru.gritandrey.entity.Account;
-import ru.gritandrey.exception.AccountNotFoundException;
-import ru.gritandrey.mapper.AccountCreateMapper;
-import ru.gritandrey.mapper.AccountReadMapper;
-import ru.gritandrey.mapper.Mapper;
-import ru.gritandrey.repository.AccountRepository;
+import ru.gritandrey.account.dto.AccountCreateDto;
+import ru.gritandrey.account.dto.AccountResponseDto;
+import ru.gritandrey.account.entity.Account;
+import ru.gritandrey.account.exception.AccountNotFoundException;
+import ru.gritandrey.account.mapper.AccountCreateMapper;
+import ru.gritandrey.account.mapper.AccountReadMapper;
+import ru.gritandrey.account.mapper.Mapper;
+import ru.gritandrey.account.repository.AccountRepository;
 
 @Service
 @RequiredArgsConstructor
