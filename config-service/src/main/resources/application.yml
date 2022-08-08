@@ -1,4 +1,3 @@
-  config-service
   spring:
     cloud:
       config:
