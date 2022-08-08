@@ -7,6 +7,8 @@ import ru.gritandrey.bill.dto.BillRequestDto;
 import ru.gritandrey.bill.dto.BillResponseDto;
 import ru.gritandrey.bill.service.BillService;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -27,8 +29,15 @@ public class BillController {
     public BillResponseDto update(@RequestBody BillRequestDto billRequestDto, @PathVariable Long billId) {
         return billService.update(billId, billRequestDto);
     }
+
     @DeleteMapping("/{accountId}")
     public BillResponseDto delete(@PathVariable Long accountId) {
         return billService.delete(accountId);
     }
+
+    @GetMapping("/account/{accountId}")
+    public List<BillResponseDto> getByAccountId(@PathVariable Long accountId) {
+        return billService.getByAccountId(accountId);
+    }
+
 }

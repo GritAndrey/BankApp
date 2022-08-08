@@ -10,9 +10,10 @@ import ru.gritandrey.bill.mapper.BillCreateMapper;
 import ru.gritandrey.bill.mapper.BillReadMapper;
 import ru.gritandrey.bill.repository.BillRepository;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +24,7 @@ public class BillService {
 
     public BillResponseDto get(Long id) {
         return billRepository.findById(id).map(billReadMapper::mapFrom)
-                .orElseThrow(()->new BillNotFoundException("Bill not found with id: " + id));
+                .orElseThrow(() -> new BillNotFoundException("Bill not found with id: " + id));
     }
 
     public Long create(BillRequestDto billRequestDto) {
@@ -52,5 +53,9 @@ public class BillService {
         BillResponseDto deletedBill = get(billId);
         billRepository.deleteById(billId);
         return deletedBill;
+    }
+
+    public List<BillResponseDto> getByAccountId(Long accountId) {
+        return billRepository.findByAccountId(accountId).stream().map(billReadMapper::mapFrom).collect(toList());
     }
 }
