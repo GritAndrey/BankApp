@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: configserver:http://localhost:8001/
   application:
     name: registry
   cloud:
@@ -9,9 +11,11 @@ spring:
       password: admin
       username: user
 
+
 eureka:
   instance:
     preferIpAddress: true
+    lease-renewal-interval-in-seconds: 10
   client:
     register-with-eureka: false
     fetch-registry: false

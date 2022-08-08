@@ -1,6 +1,8 @@
 spring:
+  config:
+    import: configserver:http://localhost:8001/
   application:
-    name: account-service
+    name: bill-service
   cloud:
     config:
 #      uri: http://config-service:8001
