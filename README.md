@@ -1,9 +1,12 @@
 # Bank Application microservices
 
-![Architecture](https://i.imgur.com/KFf2Bam.png)
-![Logic](https://i.imgur.com/DgD53bf.png)
-![Entity](https://i.imgur.com/hO9aZS3.png)
+![Architecture](https://i.imgur.com/hk02rer.png)
 
+
+![Logic](https://i.imgur.com/GSEJXn1.png)
+
+
+![Entity](https://i.imgur.com/4Tn0MtH.png )
 ## Docker-compose
 ```shell
 docker-compose build 
