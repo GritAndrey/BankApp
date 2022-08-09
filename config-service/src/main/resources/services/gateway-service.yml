@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/accounts/**
+
+        - id: bill-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/bills/**
+
+        - id: deposit-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/deposits/**
+server:
+  port: 8989
