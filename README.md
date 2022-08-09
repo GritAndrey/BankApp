@@ -1,3 +1,11 @@
+## Docker-compose
+```shell
+docker-compose build 
+```
+bankapp_notification-service:latest
+```shell
+docker-compose up
+```
 ## Eureka
 http://localhost:8761/
 
