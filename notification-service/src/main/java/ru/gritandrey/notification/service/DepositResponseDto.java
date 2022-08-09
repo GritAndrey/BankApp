@@ -1,14 +1,14 @@
 package ru.gritandrey.notification.service;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Value;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Value
+
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class DepositResponseDto {
     BigDecimal amount;
     String email;
